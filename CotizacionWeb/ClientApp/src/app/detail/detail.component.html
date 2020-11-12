@@ -1,0 +1,42 @@
+
+
+<table class="table table-striped">
+  <tr>
+    <th> IDCOTIZACION </th>
+    <th> RUC </th>
+    <th> IDVENDEDOR </th>
+    <th> NombreVend </th>
+    <th> IDCLIENTE </th>
+    <th> NombreCli </th>
+    <th> IDPRODUCTO </th>
+    <th> NOMBREPRODUCTO </th>
+    <th> PRECIOPRODUCTO </th>
+    <th> CANTIDADxPRODUCTOxDETALLE </th>
+    <th> TOTAL </th>
+
+   
+  </tr>
+  <tr *ngFor="let detail of listdetail">
+    <td>{{detail.idcotizacion}}</td>
+    <td>{{detail.ruc}}</td>
+    <td>{{detail.idvendedor}}</td>
+    <td>{{detail.nombrevend}}</td>
+    <td>{{detail.idcliente}}</td>
+    <td>{{detail.nombrecli}}</td>
+    <td>{{detail.idproducto}}</td>
+    <td>{{detail.nombreproducto}}</td>
+    <td>{{detail.precioproducto}}</td>
+    <td>{{detail.cantidadxproductoxdetalle}}</td>
+    <td>{{detail.total}}</td>
+    
+    
+  </tr>
+</table>
+
+
+
+<button class="nav-item" [routerLinkActive]="['link-active']"> <a class="nav-link text-dark" [routerLink]="['/productos']">ADDProductos</a></button>
+
+
+
+

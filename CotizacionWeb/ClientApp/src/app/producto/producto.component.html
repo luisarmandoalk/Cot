@@ -1,0 +1,45 @@
+
+<div style="border: 1px solid red">producto Component</div>
+
+
+<table class="table table-striped">
+  <tr>
+
+    <th> IDPRODUCTO </th>
+    <th> NOMBREPRODUCTO </th>
+    <th> DESCRIPCIONPRODUCTO </th>
+    <th> PRECIOPRODUCTO </th>
+    <th> STOCK </th>
+    <th> ID_TIPO </th>
+    <th colspan="1">OPCIONES</th>
+
+
+  </tr>
+  <tr *ngFor="let product of lstProductos">
+    <td>{{product.idproducto}}</td>
+    <td>{{product.nombreproducto}}</td>
+    <td>{{product.descripcionproducto}}</td>
+    <td>{{product.precioproducto}}</td>
+    <td>{{product.stock}}</td>
+    <td><input type="text" #newItem></td>
+    <td>
+      <button (click)="getall()">Add</button>
+    </td>
+  </tr>
+</table>
+
+
+<button (click)="add()">Add</button>
+
+<!--<input type="text" #newItem>
+<button (click)="add(newItem.value)">Add</button>-->
+
+<!--<table>
+  <tr *ngFor="let product of lstProductos">
+    <td>{{item.name}}</td>
+  </tr>
+</table>-->
+
+<!--<button class="nav-item" [routerLinkActive]="['link-active']"> <a class="nav-link text-dark" [routerLink]="['/productos']">ADDProductos</a></button>-->
+
+

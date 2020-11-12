@@ -1,0 +1,50 @@
+<div style="border: 1px solid red">cotizacion Component</div>
+
+<!--<p aria-live="polite">Current count: <strong>{{ cotizacion }}</strong></p>-->
+<!--<div *ngFor="let cotizacion of listcotiza">   {{cotizacion.ruc}} </div>-->
+<!--<div *ngFor="let cotizacion of listcotiza">   {{cotizacion.idcotizacion}} </div>
+
+<div *ngFor="let cotizacion of listcotiza">   {{cotizacion.ruc}} </div>-->
+
+<!--<h2>{{selectedcot.idcotizacion | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedcot.ruc}}</div>
+<div>
+  <label>
+    name:
+    <input [(ngModel)]="selectedcot.idcotizacion" placeholder="name" />
+  </label>
+</div>-->
+
+
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>RUC</th>
+    <th>CLIENTE</th>
+    <th>VENDEDOR</th>
+    <th>TOTAL</th>
+    <th colspan="2">OPCIONES</th>
+  </tr>
+  <tr *ngFor="let cotizacion of listcotizacion">
+    <td>{{cotizacion.idcotizacion}}</td>
+    <td>{{cotizacion.ruc}}</td>
+    <td>{{cotizacion.idcliente}}</td>
+    <td>{{cotizacion.idvendedor}}</td>
+    <td>{{cotizacion.total}}</td>
+
+    <td>
+      <button style="color: #4CAF50;" class="glyphicon glyphicon-pencil" (click)="onDetail()">Detalles</button>
+    </td>
+   
+    <td>
+      <button class="nav-item" [routerLinkActive]="['link-active']"> <a class="nav-link text-dark" [routerLink]="['/detail']">detalle</a></button>
+    </td>
+  </tr>
+</table>
+
+
+<!--<button class="nav-item" [routerLinkActive]="['link-active']"> <a class="nav-link text-dark" [routerLink]="['/detail']">personas</a></button>-->
+
+
+

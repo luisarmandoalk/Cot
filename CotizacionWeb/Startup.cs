@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using CotizacionWeb.Models;
 
 namespace CotizacionWeb
 {
@@ -26,6 +28,22 @@ namespace CotizacionWeb
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            var connection = @"Data Source=ANDROID_ID_ZT\SQLEXPRESS;Initial Catalog=COTIZACIONES;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            services.AddDbContext<DBContext>(options => options.UseSqlServer(connection));
+
+			
+			
+			
+			
+			//Scaffold-DbContext @"Data Source=ANDROID_ID_ZT\SQLEXPRESS;Initial Catalog=COTIZACIONES;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables Personas
+			
+			
+			
+			
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +85,8 @@ namespace CotizacionWeb
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    //spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });
         }

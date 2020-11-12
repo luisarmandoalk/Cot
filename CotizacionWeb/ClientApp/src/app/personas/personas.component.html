@@ -1,0 +1,23 @@
+<div style="border: 1px solid red">personas Component</div>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>DOCUMENTO</th>
+    <th>NOMBRE</th>
+    <th>TELEFONO</th>
+
+  </tr>
+  <tr *ngFor="let persona of listpersonas">
+    <td>{{persona.idpersona}}</td>
+    <td>{{persona.documentopersona}}</td>
+    <td>{{persona.nombrepersona}}</td>
+    <td>{{persona.telefonopersona}}</td>
+
+
+
+  </tr>
+</table>
+
+<button class="btn btn-primary" (click)="getAllEmployee()">Increment</button>
